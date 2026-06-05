@@ -1,41 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+    <body>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BunchOfApples</title>
      </head>  
-     <body>
+     
          <h1>  ECE 5 Lab 4</h1>
         <h2>Team Name: BunchOfApples</h2>
-        <p></p>
-     </body>
-     <body>
-        <h1>Team Members</h1>
+        <h3>Team Members</h3>
         <ul>
             <li>Avalon Shelton</li>
             <li>Audrey Chao</li>
             <li>Sam Enriquez</li>
             <li>Tiffany Chen</li>
         </ul>
-     </body>
-        <body>
+            <!-- <img src="?raw=true" alt="breadboard prototyping" width="400"> TEAM PIC-->
+
+       
             <h1>Prototyping</h1>
             <img src="https://github.com/xXavalonXx/bunchofapples/blob/79168ed7559893af2fb9cdb06ab6ba628bf59bdc/ece5lab4breadboard.png?raw=true" alt="breadboard prototyping" width="400">
             <img src="https://github.com/xXavalonXx/bunchofapples/blob/79168ed7559893af2fb9cdb06ab6ba628bf59bdc/ece5lab4solderedparts.png?raw=true" alt="soldered parts" width="400">
             <img src="https://github.com/xXavalonXx/bunchofapples/blob/79168ed7559893af2fb9cdb06ab6ba628bf59bdc/ece5lab4cad.png?raw=true" alt="cad" width="400">
-        </body>
+    
+        <p>
+            P-I-D values were changes throughout the course of testing to tailor the robot to each track we are racingon. 
+            Data from photo resistors and determines the efficency the bot follows the line
+        </p>
+            <p>
+                Explanation of PID values:
+ </p>
+            <p>
+P: how robot reacts in present time; higher the P value the faster the reaction time, 
+but imposes risk of instability where the robot violently sways back and forth and veers off line
+</p>
+            <p>
+I: how robot reacts to past data; accounts for residual error 
+(i.e. uneven motors, drifiting tendencies, take into account steady state error)
+</p>
+            <p>
+D: how robot reacts to future data; higher the value, 
+the more P's instability is reduced, but there's a risk that the robot 
+will incite random behaviors from reading non existent future data 
+(i.e. stopping in the middle of the run, backing up when getting slightly off the line, veering too early for an upcoming turn)
+</p>
+            <p>
+For sake of simplicity/time only P and D were used to adjust the robot's response to the line following track
+high nominal speed of 95, experimented with values past 100, and the motor would stall regardless of 
+PID values unless S dial was cranked at max given high speed, P and D were main focus; 
+using I causes conflict since the robot is moving too fast, and any resistual was accounted for in design changed; 
+the values of P and D were upped to account for faster reaction time due to higher speed: values set as followed: 
+(P - 1.5; I - 0; D - 2.5)
+</p>
+            <p>
+                To get the right values for our robot, we follow these steps for callibration: 
+                <br>(1) speed dial is increased to proper value, 
+                <br>(2) starting from a value of 0, both P and D are increased incrementally to observe that the robot is reacting quickly 
+                enough to turns (P dial) and its intensity of swaying during its turns (D dial); 
+                <br>(3)if the bot displays veering or reacting to future ghost data past the optimized dial setting for a given S, 
+                either the S is increased and the process is repeated, or P and D will have their potentiometer values decreased
+        
+    </p>    
+
     <p>
         <h3>Initial Design</h3>
         <img src="https://github.com/xXavalonXx/bunchofapples/blob/main/ECE5Lab4_Design1Top.png?raw=true" alt="top view" width="400" style="margin-right:20px">
         <img src="https://github.com/xXavalonXx/bunchofapples/blob/main/ECE5Lab4_Design1Side.png?raw=true" alt="side view" width="400">
      </p>
 
-    <video width="640" height="360" controls>
+    <video width="300" height="150" controls>
     <source src="ECE5Lab4_HalfCircle.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
- 
+ <p>    
+    We made lots of improvements during our final week of testing.
+<br> - second layer was added to intial chassis in final 3d print to provide structural support to prevent motors caving inward, in addition to providing shelves for battery packs to be stored
+<br> - included raised walls that anchored the esp32 board, motor drive, pid/photo resistors in place
+<br> - smaller soldering board was used instead for PID to save space and reduce weight on bot
+<br> - light shield was added to reduce impact on ambient light on photo resistor; made of cardboard and masking tape
+<br> - nominal speed was increased from 30 to 95 to have overall higher range of speed; PID factors changed from (P) 1 >>2.5 and (D) 0.01 >> 2.5 to account faster reaction time necessary for higher speed
+</p>
+<p>
+    If given more time, we would've made the following changes to our design:
+<br> - light shield could've been printed to provide more structural stability than current setup with tape and cardboard
+<br> - inside walls that hold battery pack/motors could've been thinned/expanded to provide easier time putting in the parts
+<br> - alternate change to previously considered change: top of chassis could'be been split into a second part that could be removed for easier access, akin to lifting the hood of a car
+ </p>
+
+
+
 
     <p>
         <h3>Final Design</h3>
@@ -43,6 +97,19 @@
         <h3>Final Poster</h3>
          <img src="https://github.com/xXavalonXx/bunchofapples/blob/ff53f683ec09f06d187a88e74ca72760d01e94ae/ECE%205%20Bunch%20Of%20Apples%20(1).png?raw=true" alt="poster" width="700" style="margin-right:20px">
     </p>
+<h3>Final Ride During Competition</h3>
+<!---
+<video width="300" height="150" controls>
+    <source src="ECE5Lab4_FinalVideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    -->
+
+    <h3>Competition Results</h3>
+        <p>
+        </p>
 
 
+    </body>
 </html>
